@@ -1,0 +1,10 @@
+este
+es
+un
+archivo
+de
+prueba
+para
+el
+script
+test
