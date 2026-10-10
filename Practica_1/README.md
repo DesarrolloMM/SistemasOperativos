@@ -1,0 +1,1 @@
+Este repositorio es para uso academico y educativo.
