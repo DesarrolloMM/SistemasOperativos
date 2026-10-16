@@ -14,24 +14,25 @@ en cat /home/user/3cifras.txt
 #!/bin/bash
 
 RUTA = $1
-$ <-cantidad de parámetros indefinidos
 
-mkdir -p dirname"$RUTA"
+argCant = $# <-cantidad de parámetros indefinidos
+
+
+if ![[ -f $Ruta]]; then
+	echo "Error: la ruta es inválida";
+	exit 1;
+fi
+
+mkdir -p $(cifras"RUTA")
 
 touch 3cifras.txt
 
 open 3cifras.txt
 
-for($ cantidad de parametros){
-	if [condición numero]; 
-		if[condicion 3 cifras];
-		fi
+for[$#]{ 
+	if[[regex[0-9]{3}]]; then
+		grabar en archivo
 	fi
 }
-
-
-
-
-
 
 

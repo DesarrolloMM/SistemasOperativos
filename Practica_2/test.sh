@@ -9,7 +9,6 @@ if [ $argCant -ne 2 ]; then
     exit 1
 fi
 
-
 if ! [[ -f $arg1  ]]; then 
     echo "Error: El primer argumento debe ser una ruta a un archivo valida"
     exit 1
@@ -22,9 +21,4 @@ fi
 
 echo "Esta es la ruta del archivo: $arg1"
 echo "Segundo argumento, numero entero positivo: $arg2"
-echo "Cantidad de argumentos: $argCant"  
-
-
-
-
-
+echo "Cantidad de argumentos: $argCant"
