@@ -1,0 +1,61 @@
+int main{
+   erd-t child;
+   child = fork();
+   if(child == 0){
+      printf("+++\n");
+      exit(0);
+   } else{
+      printf("----\n");
+      sleep(30);
+      wait(NULL);
+   }
+   child=fork();
+   if(child == 0){
+      printf("***\n");
+      sleep(120);
+      exec("/usr/bin/es", "es", "-af", NULL);
+      printf("???\n");
+   }else{
+      printf("xxxxx\n");
+   }
+   return 0;
+}
+
+
+
+1) cuantos procesos se generan?
+asumimos que todas las funciones son correctas
+
+apenas inicia se genera 1 proceso, el padre
+fork al retornar le devuelve al hijo 0
+
+        parent
+       /      \
+    parent     child1
+   /     \       
+parent   child2  
+ 
+Se generan 3 hijos
+
+2) salida generada
+no se sabe que printf se ejecuta primero
++++ ---- o ---- +++
+el padre espera 30 segundos
+el hijo finaliza (por el exit)
+
+segundo if:
+no sabemos cual va primero
+*** xxxx o *** xxxx
+el hijo duerme 120
+el padre finaliza
+exec se ejecuta (exect reemplaza al proceso en ejecución)
+no sale la salida de ????
+
+se termina la ejecución
+
+
+3) clasifica los procesos
+
+tipo de proceso: padre, hijo.
+Child 1 es proceso zombie temporalmente
+Child 2 es un huerfano ya que el padre termina antes que él
