@@ -13,6 +13,8 @@ en cat /home/user/3cifras.txt
 
 #!/bin/bash
 
+//usar shift para el bucle
+
 RUTA = $1
 
 argCant = $# <-cantidad de parámetros indefinidos
